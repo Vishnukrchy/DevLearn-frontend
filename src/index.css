@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .prose pre {
+    @apply bg-gray-800 text-white p-4 rounded-lg;
+  }
+  
+  .prose code {
+    @apply text-sm;
+  }
+}
