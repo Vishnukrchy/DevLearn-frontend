@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Github, Twitter, Linkedin, Code2 } from 'lucide-react';
+import { Github, Twitter, Linkedin, Code2, ExternalLink } from 'lucide-react';
 
 function Footer() {
   return (
@@ -67,7 +67,7 @@ function Footer() {
             <h3 className="text-white font-semibold mb-4">Connect With Us</h3>
             <div className="flex space-x-4">
               <a
-                href="https://github.com"
+                href="https://github.com/Vishnukrchy"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white"
@@ -75,7 +75,7 @@ function Footer() {
                 <Github className="h-6 w-6" />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://x.com/VishnuK74610781?s=09"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white"
@@ -83,12 +83,20 @@ function Footer() {
                 <Twitter className="h-6 w-6" />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/vishnu-kumar-2235971a7/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white"
               >
                 <Linkedin className="h-6 w-6" />
+              </a>
+              <a
+                href="https://vishnukrchy.github.io/Portfolio/#home"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white"
+              >
+                <ExternalLink className="h-6 w-6" />
               </a>
             </div>
           </div>
