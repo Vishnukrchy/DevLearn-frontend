@@ -71,12 +71,16 @@ function Navbar() {
 
           {/* Profile Menu */}
           <div className="relative flex items-center">
-            <img
-             src="src/assets/pesonal/pesonalImage.jpeg"
-              alt="Profile"
-              className="h-10 w-10 rounded-full cursor-pointer border-2 border-gray-300"
-              onClick={handleProfileClick}
-            />
+          <img
+  src="https://jsfxqnu1jzqjbn1l.public.blob.vercel-storage.com/Personal/VishnuPhoto-wYC790Oe3AYWhOAGhKPx7z8hm5cMXs.jpeg"
+  alt="Profile"
+  className="h-10 w-10 rounded-full cursor-pointer border-2 border-gray-300"
+  onClick={handleProfileClick}
+  onError={(e) => {
+    e.target.src ="https://th.bing.com/th/id/OIP.7cRYFyLoDEDh4sRtM73vvwHaDg?rs=1&pid=ImgDetMain"; 
+  }}
+/>
+
             {isProfileOpen && (
               <div
                 ref={profileMenuRef}
