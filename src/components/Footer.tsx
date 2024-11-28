@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Github, Twitter, Linkedin, Code2, ExternalLink } from 'lucide-react';
-
+  //  Footer
 function Footer() {
   return (
     <footer className="bg-gray-900">
@@ -46,7 +46,7 @@ function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link to="/resources" className="text-gray-400 hover:text-white">
-                  Learning Resources
+                  Learning Resources and Guides
                 </Link>
               </li>
               <li>
