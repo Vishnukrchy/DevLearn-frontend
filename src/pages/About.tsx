@@ -2,7 +2,7 @@ import React from 'react';
 import { Github, Linkedin, Mail } from 'lucide-react';
 import CourseHeader from '../components/CourseHeader';
 import ContentSection from '../components/ContentSection';
-
+// comment
 function About() {
   return (
     <div className="bg-gradient-to-b from-blue-50 to-indigo-100 min-h-screen">
