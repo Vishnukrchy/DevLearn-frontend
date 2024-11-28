@@ -1,0 +1,50 @@
+name: CI/CD Pipeline for Staging
+
+on:
+  push:
+    branches:
+      - master # Trigger on push to the master branch (or your target branch)
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checkout the repository code
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Node.js environment
+      - name: Set Up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20.x' # Ensure it matches your project's required version
+
+      # Step 3: Install dependencies
+      - name: Install Dependencies
+        run: npm install
+
+      # Step 4: Run Linting (Optional, but recommended)
+      - name: Run Lint
+        run: npm run lint # Ensure linting is set up in your package.json
+
+      # Step 5: Build Project
+      - name: Build Project
+        run: npm run build
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build # This job depends on the success of the build job
+    steps:
+      # Step 1: Checkout the repository code again (for deployment)
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: Trigger Vercel Deploy Hook
+      - name: Staging Hook
+        env:
+          VER_TOKEN: ${{ secrets.REACTJS_STAGING_TOKEN }}  # Secret storing the Vercel token
+          PROJECT_ID: ${{ secrets.DEVLEARN }}  # Secret storing the Vercel project ID or deploy hook path
+        run: |
+          curl -X POST \
+          -H "Authorization: Bearer $VER_TOKEN" \
+          https://api.vercel.com/v1/integrations/deploy/$PROJECT_ID
