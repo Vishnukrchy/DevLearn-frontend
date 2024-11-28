@@ -185,6 +185,7 @@ function Navbar() {
                 <Code2 className="h-8 w-8 text-indigo-600" />
                 <span className="font-bold text-xl text-gray-900">DevLearn</span>
               </button>
+              
             </div>
 
             {/* Desktop Navigation */}
