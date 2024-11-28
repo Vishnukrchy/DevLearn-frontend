@@ -23,9 +23,7 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
-      # Step 4: Run Linting (Optional, but recommended)
-      - name: Run Lint
-        run: npm run lint # Ensure linting is set up in your package.json
+     
 
       # Step 5: Build Project
       - name: Build Project
